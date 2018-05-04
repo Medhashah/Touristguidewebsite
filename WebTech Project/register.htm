@@ -1,0 +1,65 @@
+<html>
+<!--[-z0-9.]+[a-z][@]+([a-z.]+)[a-z]-->
+<head>
+<script language="Javascript">
+function validate()
+{
+	var fname=document.f1.fname.value;
+	var lname=document.f1.lname.value;
+	var pin=document.f1.pin.value;
+	var cno=document.f1.cno.value;
+	alert(cno.length);
+	var eid=document.f1.eid.value;
+	var checktext=/^[a-zA-Z]+[a-zA-Z]*$/
+	var eidtest=/([0-9a-z]+(([.]|[_])[0-9a-z]+)*)@[0-9a-z]+([.][a-z]+)+/
+	var numtest=/^[0-9]{10}$/
+	if(!checktext.test(fname))
+		alert("First name is wrong");
+	if(!checktext.test(lname))
+		alert("Last name is wrong");
+	if(!(numtest.test(cno)))
+		alert("Contact number is wrong");		
+	if(!(numtest.test(eid)))
+		alert("email id is wrong");
+}
+</script>
+<style>
+td {
+	text-align: left;
+	padding: auto;
+}
+
+
+</style>
+</head>
+<body style background="https://images5.alphacoders.com/549/549219.jpg" width="100%" margin="0">
+<div style="margin=10%;padding:10%">
+<form name="f1">
+<fieldset style="width:25%">
+<legend style="text-align:center">Personal Information</legend>
+<table>
+	<tr><th>First Name : </th>
+	<td><input type="text" name="fname"></td></tr>
+
+	<tr><th>Last Name : </th>
+	<td><input type="text" name="lname"></td></tr>
+
+	<tr><th>Email-id : </th>
+	<td><input type="email" name="eid"></td></tr>
+
+	<tr><th>Contact No : </th>
+	<td><input type="text" name ="cno"></td></tr>
+
+	<tr><th>Address : </th>
+	<td><textarea rows="5" cols="25" ></textarea></td></tr>
+
+	<tr><th>Pincode : </th>
+	<td><input type="text" name="pin"></td></tr>
+</table>
+</fieldset>
+
+<input type="submit" value="Submit" onclick="validate()">
+</div>
+</form>
+</body>
+</html>
